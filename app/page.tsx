@@ -3,7 +3,7 @@ import { Footer } from '@/components/footer'
 import { ImageCarousel } from '@/components/image-carousel'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Wrench, Zap, Droplet, Factory, Star, CheckCircle, Clock, Shield, BadgeCheck, Building2, BriefcaseBusiness } from 'lucide-react'
+import { ArrowRight, Wrench, Zap, Droplet, Factory, Star, CheckCircle, Clock, Shield, BadgeCheck, Building2, BriefcaseBusiness, Medal, TrendingUp } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -156,46 +156,72 @@ export default function Home() {
             <div className="absolute -bottom-24 right-0 w-96 h-96 bg-sky-300/15 rounded-full blur-3xl"></div>
           </div>
           <div className="relative max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="animate-slideInLeft">
+            <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_1.6fr] gap-10 xl:gap-12 items-start">
+              <div className="animate-slideInLeft xl:-mt-10">
                 <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-amber-200 mb-5 backdrop-blur-sm">
                   Trusted Engineering Partner
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Why Choose Pitambra?</h2>
                 <div className="space-y-5">
                   {[
-                    { title: '12+ Years Experience', desc: 'Proven track record in MEP and fabrication projects' },
-                    { title: 'Expert Leadership', desc: 'Led by Director Gajendra Pal with professional engineering degrees' },
-                    { title: 'Quality & Precision', desc: 'Commitment to highest standards and timeline adherence' },
-                    { title: 'Cost-Effective Solutions', desc: 'Efficient project execution delivering maximum value' },
+                    { title: '12+ Years Experience', desc: 'Proven track record in MEP and fabrication projects', icon: Medal },
+                    { title: 'Expert Leadership', desc: 'Led by Director Gajendra Pal with professional engineering degrees', icon: BriefcaseBusiness },
+                    { title: 'Quality & Precision', desc: 'Commitment to highest standards and timeline adherence', icon: Shield },
+                    { title: 'Cost-Effective Solutions', desc: 'Efficient project execution delivering maximum value', icon: TrendingUp },
                   ].map((item, index) => (
-                    <div key={index} className="flex gap-4 p-5 rounded-2xl border border-white/12 bg-white/8 shadow-[0_18px_45px_rgba(2,6,23,0.18)] backdrop-blur-sm hover:border-amber-300/40 hover:bg-white/12 transition-all duration-300 group cursor-pointer">
-                      <div className="flex-shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-secondary via-amber-400 to-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        <div className="w-2.5 h-2.5 rounded-full bg-white" />
+                    <div key={index} className="flex gap-4 p-5 md:p-6 rounded-[28px] border border-white/12 bg-slate-900/35 shadow-[0_18px_45px_rgba(2,6,23,0.18)] backdrop-blur-sm hover:border-amber-300/40 hover:bg-slate-900/45 transition-all duration-300 group cursor-pointer">
+                      <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-yellow-500 via-amber-500 to-yellow-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_18px_35px_rgba(245,158,11,0.35)]">
+                        <item.icon className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-white mb-1 group-hover:text-amber-200 transition-colors duration-300">{item.title}</h4>
-                        <p className="text-slate-200/80 text-sm group-hover:text-white transition-colors duration-300">{item.desc}</p>
+                        <h4 className="text-2xl font-bold text-white mb-2 leading-tight group-hover:text-amber-200 transition-colors duration-300">{item.title}</h4>
+                        <p className="text-slate-200/85 text-lg leading-relaxed group-hover:text-white transition-colors duration-300 max-w-md">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-6 animate-slideInRight">
-                {[
-                  { number: '12+', label: 'Years of Experience' },
-                  { number: '100+', label: 'Projects Completed' },
-                  { number: '50+', label: 'Industry Professionals' },
-                  { number: '98%', label: 'Client Satisfaction' },
-                ].map((stat, index) => (
-                  <div 
-                    key={index}
-                    className="bg-[linear-gradient(160deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08))] border border-white/15 shadow-[0_22px_55px_rgba(2,6,23,0.28)] backdrop-blur-md rounded-2xl p-6 text-center hover:border-amber-300/45 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
-                  >
-                    <div className="text-4xl font-bold bg-gradient-to-r from-white via-sky-100 to-amber-200 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300 inline-block">{stat.number}</div>
-                    <p className="text-xs md:text-sm text-slate-200/80 group-hover:text-white transition-colors duration-300 font-medium">{stat.label}</p>
-                  </div>
-                ))}
+              <div className="animate-slideInRight space-y-8 md:space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                  {[
+                    { src: '/industrial-facility.jpg', alt: 'Industrial MEP plant room' },
+                    { src: '/electrical-system.jpg', alt: 'Electrical control systems' },
+                    { src: '/hvac-system.jpg', alt: 'HVAC ducting system' },
+                    { src: '/fabrication.jpg', alt: 'Structural fabrication work' },
+                  ].map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative overflow-hidden rounded-[24px] border border-white/20 bg-white/10 shadow-[0_22px_55px_rgba(2,6,23,0.28)] min-h-[220px] md:min-h-[280px] group"
+                    >
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-white/10" />
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-y-4 gap-x-4 border border-white/12 bg-slate-950/30 backdrop-blur-sm rounded-[28px] px-5 md:px-6 py-5">
+                  {[
+                    { icon: Shield, title: 'Safety First' },
+                    { icon: BadgeCheck, title: 'Quality Assurance' },
+                    { icon: Clock, title: 'On-Time Delivery' },
+                    { icon: BriefcaseBusiness, title: 'Client Satisfaction' },
+                    { icon: Factory, title: 'Innovative Solutions' },
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 text-white min-w-0 2xl:justify-center 2xl:border-l 2xl:border-white/20 first:2xl:border-l-0 2xl:pl-4 first:2xl:pl-0"
+                    >
+                      <item.icon className="w-9 h-9 text-amber-300 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-wide leading-snug">
+                        {item.title}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
