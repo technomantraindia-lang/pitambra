@@ -50,7 +50,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'c0023235-2f1c-4e43-a8bc-831d4877862a'
     const form = e.currentTarget
     const data = new FormData(form)
 
