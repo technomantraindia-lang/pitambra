@@ -65,6 +65,22 @@ export default function Contact() {
     setSubmitError('')
 
     try {
+      const projectTypeLabel = formData.projectType || 'Not selected'
+      const inquirySummary = [
+        'New project inquiry received from the Pitambra Fabtech website.',
+        '',
+        'CONTACT DETAILS',
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone || 'Not provided'}`,
+        `Company: ${formData.company || 'Not provided'}`,
+        '',
+        'PROJECT DETAILS',
+        `Project Type: ${projectTypeLabel}`,
+        '',
+        'MESSAGE',
+        formData.message,
+      ].join('\n')
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -73,14 +89,10 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: accessKey,
-          subject: 'New Project Inquiry - Pitambra Fabtech Website',
+          subject: `New Project Inquiry from ${formData.name} - Pitambra Fabtech`,
           from_name: 'Pitambra Fabtech Website',
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || 'Not provided',
-          company: formData.company || 'Not provided',
-          project_type: formData.projectType || 'Not selected',
-          message: formData.message,
+          replyto: formData.email,
+          'Project Inquiry Summary': inquirySummary,
         }),
       })
 
@@ -306,11 +318,11 @@ export default function Contact() {
                           className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                         >
                           <option value="">Select a project type</option>
-                          <option value="mep">MEP Services</option>
-                          <option value="fabrication">Custom Fabrication</option>
-                          <option value="both">MEP + Fabrication</option>
-                          <option value="consultation">Consultation</option>
-                          <option value="other">Other</option>
+                          <option value="MEP Services">MEP Services</option>
+                          <option value="Custom Fabrication">Custom Fabrication</option>
+                          <option value="MEP + Fabrication">MEP + Fabrication</option>
+                          <option value="Consultation">Consultation</option>
+                          <option value="Other">Other</option>
                         </select>
                       </div>
 

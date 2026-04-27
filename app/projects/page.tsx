@@ -5,7 +5,7 @@ import { Footer } from '@/components/footer'
 import { ImageCarousel } from '@/components/image-carousel'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
-import { MapPin, Calendar, Tag, ArrowRight, Wrench, Zap, Droplet, Factory, CheckCircle2 } from 'lucide-react'
+import { MapPin, Tag, ArrowRight, Wrench, Zap, Droplet, Factory, CheckCircle2 } from 'lucide-react'
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -13,67 +13,70 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'Modern Office Complex MEP',
-      location: 'Mumbai, India',
-      date: '2023',
-      category: 'Commercial',
-      image: '/building-interior.jpg',
-      description: 'Complete MEP installation and coordination for a 50,000 sq ft modern office complex with integrated HVAC, electrical, and plumbing systems.',
-      highlights: ['HVAC Design', 'Electrical Distribution', 'Fire Safety', 'Building Automation']
+      title: 'Fire Hydrant Line Work',
+      location: 'JSW MG Motor India Pvt Ltd, Halol, Gujarat',
+      category: 'Fire Safety',
+      image: '/pipe-fabrication.jpg',
+      description: 'Execution of fire hydrant line work for an automotive manufacturing facility, supporting plant fire safety infrastructure with dependable piping installation.',
+      highlights: ['Fire Hydrant Line', 'Plant Safety', 'Piping Installation', 'Industrial Site Work']
     },
     {
       id: 2,
-      title: 'Industrial Manufacturing Facility',
-      location: 'Bangalore, India',
-      date: '2022',
-      category: 'Industrial',
+      title: 'Fire Sprinkler Work',
+      location: 'Hero MotoCorp Ltd, Halol, Gujarat',
+      category: 'Fire Safety',
       image: '/industrial-facility.jpg',
-      description: 'Custom fabrication and MEP services for industrial facility including specialized electrical and mechanical systems for production lines.',
-      highlights: ['Custom Fabrication', 'Heavy Equipment', 'Power Systems', 'Process Integration']
+      description: 'Fire sprinkler system work executed for Hero MotoCorp at Halol, focused on reliable coverage, site coordination, and safety-led installation practices.',
+      highlights: ['Sprinkler System', 'Fire Protection', 'Automotive Plant', 'Safety Compliance']
     },
     {
       id: 3,
-      title: 'Residential Complex - Phase 1',
-      location: 'Pune, India',
-      date: '2023',
-      category: 'Residential',
-      image: '/mep-installation.jpg',
-      description: 'MEP design and installation for residential complex with 200+ units including advanced plumbing, electrical, and HVAC systems.',
-      highlights: ['Water Management', 'Electrical Networks', 'Smart Metering', 'Central HVAC']
+      title: 'SS Drinking Water Line Project',
+      location: 'Hero MotoCorp Ltd, Tirupati, Andhra Pradesh',
+      category: 'Piping',
+      image: '/plumbing-system.jpg?v=2',
+      description: 'Stainless steel drinking water line project delivered for Hero MotoCorp Tirupati, supporting hygienic water distribution with quality piping execution.',
+      highlights: ['SS Piping', 'Drinking Water Line', 'Utility Network', 'Quality Installation']
     },
     {
       id: 4,
-      title: 'Hospital Infrastructure',
-      location: 'Hyderabad, India',
-      date: '2022',
-      category: 'Institutional',
-      image: '/electrical-system.jpg',
-      description: 'Critical MEP systems for hospital facility ensuring high reliability with backup power, medical gas systems, and specialized plumbing.',
-      highlights: ['Medical Gas Systems', 'Backup Power', 'Emergency Systems', 'Compliance Certified']
+      title: 'Fire Hydrant Line Work',
+      location: 'Satyam Auto, Halol, Gujarat',
+      category: 'Fire Safety',
+      image: '/mep-installation.jpg',
+      description: 'Fire hydrant line work completed for Satyam Auto at Halol, with attention to industrial safety requirements and coordinated site execution.',
+      highlights: ['Hydrant Piping', 'Industrial Safety', 'Site Coordination', 'Execution Support']
     },
     {
       id: 5,
-      title: 'Shopping Mall MEP Network',
-      location: 'Delhi, India',
-      date: '2021',
-      category: 'Commercial',
-      image: '/hvac-system.jpg',
-      description: 'Comprehensive MEP coordination for large shopping mall with multiple levels, food courts, and entertainment zones.',
-      highlights: ['Complex Coordination', 'Kitchen Systems', 'Drainage Design', 'Fire Safety']
+      title: 'New Robotic Line Installation',
+      location: 'Hero MotoCorp Ltd, Halol, Gujarat',
+      category: 'Industrial Installation',
+      image: '/electrical-system.jpg',
+      description: 'Aluminium phase robotic line installation support including electrical and piping work for production-line readiness at Hero MotoCorp Halol.',
+      highlights: ['Robotic Line', 'Electrical Work', 'Piping Work', 'Production Support']
     },
     {
       id: 6,
-      title: 'Tech Park Fabrication',
-      location: 'Bangalore, India',
-      date: '2023',
-      category: 'Commercial',
-      image: '/pipe-fabrication.jpg',
-      description: 'Custom structural fabrication and installation for tech park infrastructure with precision engineering and quality assurance.',
-      highlights: ['Structural Steel', 'Custom Bracing', 'Precision Assembly', 'Quality Certified']
+      title: 'Compound Wall Work',
+      location: 'Varroc Engineering Pvt Ltd, Halol, Gujarat',
+      category: 'Civil Works',
+      image: '/project-completion.jpg',
+      description: 'Compound wall work executed for Varroc Engineering at Halol, supporting plant boundary infrastructure with practical civil execution.',
+      highlights: ['Compound Wall', 'Civil Work', 'Boundary Infrastructure', 'Industrial Facility']
+    },
+    {
+      id: 7,
+      title: 'Wire Fencing Across Plant',
+      location: 'Merino Industries Ltd, Halol, Gujarat',
+      category: 'Civil Works',
+      image: '/fabrication.jpg',
+      description: 'Wire fencing work carried out across the plant area for Merino Industries, improving site boundary control and plant-level infrastructure readiness.',
+      highlights: ['Wire Fencing', 'Plant Boundary', 'Site Infrastructure', 'Civil Support']
     },
   ]
 
-  const categories = ['All', 'Commercial', 'Industrial', 'Residential', 'Institutional']
+  const categories = ['All', 'Fire Safety', 'Piping', 'Industrial Installation', 'Civil Works']
   const filteredProjects = useMemo(
     () => activeCategory === 'All'
       ? projects
@@ -101,7 +104,7 @@ export default function Projects() {
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slideInLeft">Our Projects</h1>
             <p className="text-lg opacity-90 max-w-2xl animate-slideInLeft delay-100">
-              Showcasing our portfolio of successfully completed MEP and fabrication projects across diverse sectors and scales.
+              Real project work delivered for automotive, industrial, and infrastructure clients across fire safety, piping, fabrication, and civil execution.
             </p>
           </div>
         </section>
@@ -156,14 +159,10 @@ export default function Projects() {
                   </div>
 
                   <div className="p-6">
-                    <div className="mb-4 flex items-center justify-between gap-4 text-sm">
+                    <div className="mb-4 text-sm">
                       <div className="flex items-center gap-2 text-slate-500">
-                        <MapPin size={15} className="text-secondary" />
-                        <span>{project.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <Calendar size={15} className="text-secondary" />
-                        <span>{project.date}</span>
+                        <MapPin size={15} className="shrink-0 text-secondary" />
+                        <span className="leading-6">{project.location}</span>
                       </div>
                     </div>
 
