@@ -203,7 +203,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-y-4 gap-x-4 border border-white/12 bg-slate-950/30 backdrop-blur-sm rounded-[28px] px-5 md:px-6 py-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 border border-white/12 bg-slate-950/30 backdrop-blur-sm rounded-[28px] px-5 md:px-6 py-5">
                   {[
                     { icon: Shield, title: 'Safety First' },
                     { icon: BadgeCheck, title: 'Quality Assurance' },
@@ -213,10 +213,10 @@ export default function Home() {
                   ].map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 text-white min-w-0 2xl:justify-center 2xl:border-l 2xl:border-white/20 first:2xl:border-l-0 2xl:pl-4 first:2xl:pl-0"
+                      className="flex min-h-16 min-w-0 items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white"
                     >
-                      <item.icon className="w-9 h-9 text-amber-300 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-wide leading-snug">
+                      <item.icon className="h-8 w-8 flex-shrink-0 text-amber-300 sm:h-9 sm:w-9" />
+                      <span className="min-w-0 text-sm font-semibold uppercase leading-snug tracking-wide break-words">
                         {item.title}
                       </span>
                     </div>
@@ -405,7 +405,10 @@ export default function Home() {
               <div className="inline-flex items-center rounded-full border border-amber-200 bg-white/80 px-4 py-2 text-sm font-semibold text-amber-700 mb-5 shadow-sm backdrop-blur-sm">
                 Built For Confident Project Delivery
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Why industrial and commercial teams choose Pitambra.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                Why industrial and commercial<br />
+                teams choose Pitambra.
+              </h2>
               <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
                 We combine turnkey execution, compliant operations, technical manpower, and reliable site coordination to keep projects moving smoothly.
               </p>
