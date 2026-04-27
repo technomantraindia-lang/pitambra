@@ -9,6 +9,9 @@ export default function Home() {
   const clients = [
     { name: 'Hero MotoCorp', logo: '/hero.png' },
     { name: 'Morris Garages', logo: '/mg.png' },
+    { name: 'Merino', logo: '/merino.png' },
+    { name: 'Kores', logo: '/kores.png' },
+    { name: 'Orbia', logo: '/orbia.png' },
     { name: 'Banco', logo: '/banco.png' },
     { name: 'Satyam Auto Components', logo: '/satyam.png' },
     { name: 'Shakun', logo: '/shakun.png' },
@@ -440,29 +443,32 @@ export default function Home() {
               <div className="inline-flex items-center rounded-full border border-sky-200 bg-white/80 px-4 py-2 text-sm font-semibold text-primary mb-5 shadow-sm backdrop-blur-sm">
                 Trusted By Leading Brands
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 animate-fadeInUp">Our Clients</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 animate-fadeInUp">Our Valuable Clients</h2>
               <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600 animate-fadeInUp delay-100">
                 We are proud to support respected automotive, industrial, and infrastructure teams with dependable engineering execution.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
-              {clients.map((client, index) => (
-                <div
-                  key={client.name}
-                  data-scroll="scale"
-                  data-scroll-delay={String(index % 4)}
-                  className="group relative flex h-32 items-center justify-center overflow-hidden rounded-2xl border border-sky-200/80 bg-white/95 p-5 shadow-[0_16px_38px_rgba(14,116,144,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-[0_22px_48px_rgba(245,158,11,0.13)] animate-fadeInUp"
-                  style={{ animationDelay: `${index * 60}ms` }}
-                >
-                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary via-sky-500 to-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <Image
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    className="object-contain p-5 transition-transform duration-300 group-hover:scale-105"
-                  />
+            <div className="clients-marquee space-y-4">
+              {[clients.filter((_, index) => index % 2 === 0), clients.filter((_, index) => index % 2 !== 0)].map((row, rowIndex) => (
+                <div key={rowIndex} className="clients-marquee-row">
+                  <div className={`clients-marquee-track ${rowIndex === 1 ? 'clients-marquee-track-slow' : ''}`}>
+                    {[...row, ...row, ...row].map((client, index) => (
+                      <div
+                        key={`${client.name}-${rowIndex}-${index}`}
+                        className="group/card relative flex h-32 w-48 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-sky-200/80 bg-white/95 p-5 shadow-[0_16px_38px_rgba(14,116,144,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-[0_22px_48px_rgba(245,158,11,0.13)] sm:w-56"
+                      >
+                        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary via-sky-500 to-secondary opacity-0 transition-opacity duration-300 group-hover/card:opacity-100" />
+                        <Image
+                          src={client.logo}
+                          alt={`${client.name} logo`}
+                          fill
+                          sizes="(max-width: 640px) 192px, 224px"
+                          className="object-contain p-5 transition-transform duration-300 group-hover/card:scale-105"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
