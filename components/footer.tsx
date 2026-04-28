@@ -4,6 +4,8 @@ import { Mail, Phone, MapPin, ArrowUpRight, Wrench, Zap, Droplet, Factory, Check
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const factoryAddress = 'Plot No. SME-1/110, GIDC Estate Halol-2 (Maswad), Taluka Halol, Panchmahals, Gujarat 389350'
+  const factoryMapsUrl = 'https://maps.app.goo.gl/d5zaBRRzDqczKrbAA'
 
   return (
     <footer className="relative overflow-hidden bg-slate-950 text-primary-foreground">
@@ -130,12 +132,17 @@ export function Footer() {
                   Info@pitambrafabtech.com
                 </a>
               </div>
-              <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/6 px-4 py-3">
+              <a
+                href={factoryMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex gap-3 rounded-2xl border border-white/10 bg-white/6 px-4 py-3 transition-colors hover:border-amber-300/30 hover:bg-white/10"
+              >
                 <MapPin size={16} className="flex-shrink-0 mt-0.5 text-amber-300" />
-                <span className="text-slate-200/85">
-                  Plot No. SME-1/110, GIDC Estate, Halol-2 (Maswad), Taluka Halol, Panchmahals, Gujarat 389350
+                <span className="text-slate-200/85 hover:text-white">
+                  {factoryAddress}
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

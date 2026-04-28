@@ -8,8 +8,9 @@ import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CircleUserRound } from
 import { useState } from 'react'
 
 export default function Contact() {
-  const factoryAddress = 'Plot No. SME-1/110, GIDC Estate, Halol-2 (Maswad), Taluka Halol, Panchmahals, Gujarat 389350'
-  const factoryMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(factoryAddress)}`
+  const factoryAddress = 'Plot No. SME-1/110, GIDC Estate Halol-2 (Maswad), Taluka Halol, Panchmahals, Gujarat 389350'
+  const officeAddress = 'FF-11, Nilkanth Complex, Opp. GIDC Colony, Safari Road, Halol GIDC, Halol Panchmahals, Gujarat, 389350'
+  const factoryMapsUrl = 'https://maps.app.goo.gl/d5zaBRRzDqczKrbAA'
 
   const contactPeople = [
     {
@@ -192,7 +193,7 @@ export default function Contact() {
                   },
                   {
                     icon: MapPin,
-                    title: 'Location',
+                    title: 'Factory Address',
                     value: factoryAddress,
                     href: factoryMapsUrl
                   },
@@ -394,9 +395,9 @@ export default function Contact() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary/20 to-primary/15 flex items-center justify-center mb-6">
                     <MapPin size={28} className="text-secondary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Factory Address</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Office Address</h3>
                   <p className="text-muted-foreground leading-8 mb-8">
-                    {factoryAddress}
+                    {officeAddress}
                   </p>
                   <a
                     href={factoryMapsUrl}
