@@ -25,7 +25,7 @@ export default function Projects() {
       title: 'Fire Sprinkler Work',
       location: 'Hero MotoCorp Ltd, Halol, Gujarat',
       category: 'Fire Safety',
-      image: '/Fire-Sprinkler.png',
+      image: '/Fire-Sprinkler1.png',
       description: 'Fire sprinkler system work executed for Hero MotoCorp at Halol, focused on reliable coverage, site coordination, and safety-led installation practices.',
       highlights: ['Sprinkler System', 'Fire Protection', 'Automotive Plant', 'Safety Compliance']
     },

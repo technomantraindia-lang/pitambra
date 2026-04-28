@@ -4,8 +4,6 @@ import { Mail, Phone, MapPin, ArrowUpRight, Wrench, Zap, Droplet, Factory, Check
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-  const factoryAddress = 'Plot No. SME-1/110, GIDC Estate Halol-2 (Maswad), Taluka Halol, Panchmahals, Gujarat 389350'
-  const factoryMapsUrl = 'https://maps.app.goo.gl/d5zaBRRzDqczKrbAA'
 
   return (
     <footer className="relative overflow-hidden bg-slate-950 text-primary-foreground">
@@ -76,8 +74,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xl font-bold text-white mb-5">Quick Links</h4>
-            <ul className="space-y-3.5 text-base">
+            <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
+            <ul className="space-y-3 text-sm">
               {[
                 { href: '/services', label: 'Services' },
                 { href: '/about', label: 'About Us' },
@@ -86,8 +84,8 @@ export function Footer() {
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="group inline-flex items-center gap-2.5 text-slate-200/85 transition-colors hover:text-white">
-                    <span className="h-2 w-2 rounded-full bg-amber-300/70 transition-transform group-hover:scale-125" />
+                  <Link href={link.href} className="group inline-flex items-center gap-2 text-slate-200/85 transition-colors hover:text-white">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-300/70 transition-transform group-hover:scale-125" />
                     {link.label}
                   </Link>
                 </li>
@@ -132,34 +130,19 @@ export function Footer() {
                   Info@pitambrafabtech.com
                 </a>
               </div>
-              <a
-                href={factoryMapsUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex gap-3 rounded-2xl border border-white/10 bg-white/6 px-4 py-3 transition-colors hover:border-amber-300/30 hover:bg-white/10"
-              >
+              <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/6 px-4 py-3">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5 text-amber-300" />
-                <span className="text-slate-200/85 hover:text-white">
-                  {factoryAddress}
+                <span className="text-slate-200/85">
+                  Plot No. SME-1/110, GIDC Estate, Halol-2 (Maswad), Taluka Halol, Panchmahals, Gujarat 389350
                 </span>
-              </a>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="mt-12 border-t border-white/12 pt-6">
           <div className="flex flex-col gap-4 text-sm text-slate-300/85 md:flex-row md:items-center md:justify-between">
-            <p>
-              &copy; {currentYear} All Rights Reserved. Design By{' '}
-              <a
-                href="https://technomantra.in/"
-                target="_blank"
-                rel="noreferrer"
-                className="font-semibold text-amber-300 transition-colors hover:text-amber-200"
-              >
-                Technomantra India.
-              </a>
-            </p>
+            <p>&copy; {currentYear} All Rights Reserved. Design By Technomantra India.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <Link href="#" className="hover:text-white transition-colors">
                 Privacy Policy
