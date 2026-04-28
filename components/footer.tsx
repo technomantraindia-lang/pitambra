@@ -74,8 +74,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="text-xl font-bold text-white mb-5">Quick Links</h4>
+            <ul className="space-y-3.5 text-base">
               {[
                 { href: '/services', label: 'Services' },
                 { href: '/about', label: 'About Us' },
@@ -84,8 +84,8 @@ export function Footer() {
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="group inline-flex items-center gap-2 text-slate-200/85 transition-colors hover:text-white">
-                    <span className="h-1.5 w-1.5 rounded-full bg-amber-300/70 transition-transform group-hover:scale-125" />
+                  <Link href={link.href} className="group inline-flex items-center gap-2.5 text-slate-200/85 transition-colors hover:text-white">
+                    <span className="h-2 w-2 rounded-full bg-amber-300/70 transition-transform group-hover:scale-125" />
                     {link.label}
                   </Link>
                 </li>
