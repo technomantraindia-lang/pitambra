@@ -14,8 +14,7 @@ export default function About() {
           <div className="absolute inset-0 z-0">
             <ImageCarousel 
               images={[
-                { src: '/team-working.jpg', alt: 'Team Working' },
-                { src: '/project-completion.jpg', alt: 'Project Completion' },
+          
                 { src: '/building-interior.jpg', alt: 'Building Interior' },
                 { src: '/industrial-facility.jpg', alt: 'Industrial Facility' },
               ]}

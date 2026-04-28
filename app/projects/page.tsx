@@ -34,7 +34,7 @@ export default function Projects() {
       title: 'SS Drinking Water Line Work',
       location: 'Hero MotoCorp Ltd, Tirupati, Andhra Pradesh',
       category: 'Piping',
-      image: '/plumbing-system.jpg?v=2',
+      image: '/plumbing-system2.png',
       description: 'Stainless steel drinking water line project delivered for Hero MotoCorp Tirupati, supporting hygienic water distribution with quality piping execution.',
       highlights: ['SS Piping', 'Drinking Water Line', 'Utility Network', 'Quality Installation']
     },
@@ -94,8 +94,7 @@ export default function Projects() {
             <ImageCarousel 
               images={[
                 { src: '/Fire-Hydrant-line-JSW-Mg-motor.png', alt: 'Fire Hydrant Line Work at JSW MG Motor' },
-                { src: '/Fire-Sprinkler.png', alt: 'Fire Sprinkler Work at Hero MotoCorp' },
-                { src: '/Robotic-Work.png', alt: 'Robotic Line Installation at Hero MotoCorp' },
+
                 { src: '/Compound-wall.png', alt: 'Compound Wall Work at Varroc Engineering' },
               ]}
             />

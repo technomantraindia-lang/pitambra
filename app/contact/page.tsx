@@ -124,7 +124,6 @@ export default function Contact() {
           <div className="absolute inset-0 z-0">
             <ImageCarousel 
               images={[
-                { src: '/team-working.jpg', alt: 'Team Working' },
                 { src: '/mep-installation.jpg', alt: 'MEP Installation' },
                 { src: '/fabrication.jpg', alt: 'Fabrication' },
                 { src: '/industrial-facility.jpg', alt: 'Industrial Facility' },

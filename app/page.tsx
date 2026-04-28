@@ -32,39 +32,42 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <ImageCarousel 
               images={[
-                { src: '/mep-installation.jpg', alt: 'MEP Installation' },
-                { src: '/fabrication.jpg', alt: 'Fabrication Work' },
-                { src: '/hvac-system.jpg', alt: 'HVAC System' },
-                { src: '/industrial-facility.jpg', alt: 'Industrial Facility' },
+                { src: '/plumbing-system2.png', alt: 'SS Drinking Water Line Work' },
+                { src: '/Fire-Sprinkler.png', alt: 'Fire Sprinkler Work' },
+                { src: '/Robotic-Work.png', alt: 'Robotic Work' },
+                { src: '/Fire-Hydrant-line-JSW-Mg-motor.png', alt: 'Fire Hydrant Line Work' },
               ]}
+              imageClassName="object-cover"
+              imageQuality={100}
             />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.93)_0%,rgba(15,23,42,0.82)_42%,rgba(15,23,42,0.34)_78%,rgba(2,6,23,0.64)_100%)]"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.45)_0%,rgba(2,6,23,0)_42%,rgba(2,6,23,0.82)_100%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.74)_0%,rgba(15,23,42,0.58)_40%,rgba(15,23,42,0.22)_72%,rgba(2,6,23,0.18)_100%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.18)_0%,rgba(2,6,23,0.04)_45%,rgba(2,6,23,0.52)_100%)]"></div>
+            <div className="absolute inset-y-0 left-0 w-full max-w-5xl bg-[radial-gradient(circle_at_30%_45%,rgba(2,6,23,0.28),transparent_52%)]"></div>
           </div>
 
           {/* Content */}
           <div className="relative z-10 mx-auto flex min-h-[calc(92vh-14rem)] w-full max-w-7xl flex-col justify-center px-6">
             <div className="max-w-4xl">
-              <div className="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-amber-200 shadow-[0_12px_32px_rgba(2,6,23,0.25)] backdrop-blur-md animate-slideInLeft">
+              <div className="mb-6 inline-flex items-center rounded-full border border-white/25 bg-slate-950/35 px-4 py-2 text-sm font-semibold text-amber-200 shadow-[0_12px_32px_rgba(2,6,23,0.35)] backdrop-blur-md animate-slideInLeft">
                 12+ Years of Industrial MEP & Fabrication Expertise
               </div>
-              <h1 className="mb-6 max-w-4xl text-5xl font-bold leading-tight text-white text-balance animate-slideInLeft md:text-6xl lg:text-7xl">
+              <h1 className="mb-6 max-w-4xl text-5xl font-bold leading-tight text-white text-balance drop-shadow-[0_8px_24px_rgba(0,0,0,0.72)] animate-slideInLeft md:text-6xl lg:text-7xl">
                 Precision MEP Solutions for Industrial Projects
               </h1>
-              <p className="mb-10 max-w-2xl text-lg leading-8 text-slate-100 animate-slideInLeft delay-100 md:text-xl">
+              <p className="mb-10 max-w-2xl text-lg font-medium leading-8 text-slate-50 drop-shadow-[0_4px_16px_rgba(0,0,0,0.72)] animate-slideInLeft delay-100 md:text-xl">
                 Pitambra Fab Tech delivers mechanical, electrical, plumbing, and custom fabrication work with dependable site coordination, skilled manpower, and quality-focused execution.
               </p>
               <div className="flex flex-col gap-4 animate-slideInLeft delay-200 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 font-bold text-white shadow-[0_22px_46px_rgba(249,115,22,0.28)] transition-all duration-300 hover:scale-105 hover:shadow-[0_26px_52px_rgba(249,115,22,0.36)]"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 font-bold text-white shadow-[0_22px_46px_rgba(0,0,0,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_26px_52px_rgba(249,115,22,0.36)]"
                 >
                   Get a Quote
                   <ArrowRight size={20} />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/35 bg-white/10 px-8 py-4 font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/18 hover:shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/45 bg-slate-950/28 px-8 py-4 font-bold text-white shadow-[0_18px_36px_rgba(0,0,0,0.22)] backdrop-blur-md transition-all duration-300 hover:bg-white/18 hover:shadow-lg"
                 >
                   Our Services
                 </Link>
@@ -77,9 +80,9 @@ export default function Home() {
                 { value: '50+', label: 'Skilled Team Members' },
                 { value: 'Rs 2.3 Cr', label: 'Last FY Turnover' },
               ].map((item) => (
-                <div key={item.label} className="border-l-2 border-amber-400/80 bg-white/[0.07] px-5 py-4 shadow-[0_16px_34px_rgba(2,6,23,0.22)] backdrop-blur-md">
-                  <p className="text-3xl font-bold text-white">{item.value}</p>
-                  <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-slate-200">{item.label}</p>
+                <div key={item.label} className="border-l-2 border-amber-400 bg-slate-950/30 px-5 py-4 shadow-[0_16px_34px_rgba(2,6,23,0.35)] backdrop-blur-md">
+                  <p className="text-3xl font-bold text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.65)]">{item.value}</p>
+                  <p className="mt-1 text-sm font-bold uppercase tracking-wide text-slate-100 drop-shadow-[0_3px_10px_rgba(0,0,0,0.65)]">{item.label}</p>
                 </div>
               ))}
             </div>

@@ -6,9 +6,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface CarouselProps {
   images: { src: string; alt: string }[]
+  imageClassName?: string
+  imageQuality?: number
 }
 
-export function ImageCarousel({ images }: CarouselProps) {
+export function ImageCarousel({ images, imageClassName = 'object-cover', imageQuality }: CarouselProps) {
   const [current, setCurrent] = useState(0)
   const [autoPlay, setAutoPlay] = useState(true)
   const [isVisible, setIsVisible] = useState(true)
@@ -65,11 +67,11 @@ export function ImageCarousel({ images }: CarouselProps) {
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
+              className={imageClassName}
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
               sizes="100vw"
-              quality={index === 0 ? 80 : 70}
+              quality={imageQuality ?? (index === 0 ? 80 : 70)}
             />
           </div>
         ))}

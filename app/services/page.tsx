@@ -135,8 +135,6 @@ export default function Services() {
             <ImageCarousel 
               images={[
                 { src: '/hvac-system.jpg', alt: 'HVAC Systems' },
-                { src: '/electrical-system.jpg', alt: 'Electrical Systems' },
-                { src: '/plumbing-system.jpg?v=2', alt: 'Plumbing' },
                 { src: '/fabrication.jpg', alt: 'Fabrication' },
               ]}
             />
